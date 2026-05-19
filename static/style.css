@@ -130,3 +130,31 @@ footer {
 .result-box li {
     margin: 0.25rem 0;
 }
+
+/* Conteneur global des alertes */
+.alerts-container {
+    margin-bottom: 15px;
+}
+
+/* Liste des alertes */
+.alerts-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Style de base pour chaque ligne d'alerte */
+.alert-item {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Couleur si le système est stable (Vert) */
+.alert-stable {
+    color: #22c55e;
+}
+
+/* Couleur s'il y a une alerte / erreur (Rouge) */
+.alert-danger {
+    color: #ef4444;
+}

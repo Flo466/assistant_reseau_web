@@ -22,11 +22,10 @@
             <h3>Métriques pour {{ hostname }}</h3>
 
             {% if alert_messages %}
-            <div class="alerts-container" style="margin-bottom: 15px;">
-                <ul style="list-style-type: none; padding-left: 0;">
+            <div class="alerts-container">
+                <ul class="alerts-list">
                     {% for alert in alert_messages %}
-                    <li
-                        style="font-weight: bold; margin-bottom: 8px; color: {% if 'stable' in alert %}#22c55e{% else %}#ef4444{% endif %};">
+                    <li class="alert-item {% if 'stable' in alert %}alert-stable{% else %}alert-danger{% endif %}">
                         ⚠️ {{ alert }}
                     </li>
                     {% endfor %}

@@ -14,7 +14,7 @@ def submit_machine():
     ip_address = request.form.get('ip_address')
     status = request.form.get('status')
 
-    # 2. Conversion
+    # Conversion
     def safe_float(value, default):
         try:
             if value is None or value == "":
@@ -28,14 +28,14 @@ def submit_machine():
     cpu_usage = safe_float(request.form.get('cpu_usage'), 0.0)
     disk_space = safe_float(request.form.get('disk_space'), 100.0)
     
-    # 3. Check if IP is valid
+    # Check if IP is valid
     try:
         ipaddress.ip_address(ip_address)
         ip_is_valid = True
     except ValueError:
         ip_is_valid = False
 
-    # 4. Logic
+    # Logic
     alerts = []
     
     # Check IP
@@ -62,11 +62,10 @@ def submit_machine():
     if disk_space < 10.0:
         alerts.append(f"Critique: L'espace disque sur {hostname} est faible ({disk_space}% restant).")
         
-    # Si aucune alerte n'a été levée
     if not alerts:
         alerts.append(f"Système stable pour {hostname}.")
 
-    # 5. Send var to HTML
+    # Send var to HTML
     return render_template(
         'index.html', 
         hostname=hostname,
