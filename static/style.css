@@ -1,0 +1,160 @@
+/*Global Reset to remove default browser margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Force body to occupy the full viewport height and align elements in a column layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Header: Stays at the top. */
+header {
+    background-color: #1e293b; /* Dark slate blue */
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/*Main Workspace: expands to fill all remaining vertical space (flex: 1) */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+main p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/*Footer: Pushed down to the absolute bottom of the screen by the 'flex: 1' on main */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-top: 1px solid #334155;
+}
+
+/* Form container layout */
+.machine-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+/* Individual form groups alignment */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* Inputs, select dropdown fields styling */
+.form-group input, .form-group select {
+    padding: 0.6rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f8fafc;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #3b82f6; /* Modern blue highlight */
+    background-color: #ffffff;
+}
+
+/* Submit button styling */
+.btn-submit {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+/* Simple result container styling */
+.result-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f0fdf4; /* Light green success background */
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+}
+
+.result-box h3 {
+    color: #166534;
+    margin-bottom: 0.5rem;
+}
+
+.result-box ul {
+    list-style: none;
+}
+
+.result-box li {
+    margin: 0.25rem 0;
+}
+
+/* Conteneur global des alertes */
+.alerts-container {
+    margin-bottom: 15px;
+}
+
+/* Liste des alertes */
+.alerts-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Style de base pour chaque ligne d'alerte */
+.alert-item {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Couleur si le système est stable (Vert) */
+.alert-stable {
+    color: #22c55e;
+}
+
+/* Couleur s'il y a une alerte / erreur (Rouge) */
+.alert-danger {
+    color: #ef4444;
+}
