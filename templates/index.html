@@ -24,8 +24,8 @@
 
             <!-- IP address Input -->
             <div class="form-group">
-                <label for="ip-address">Adresse IP:</label>
-                <input type="text" id="ip-address" name="ip-address" required placeholder="ex: 192.168.1.10">
+                <label for="ip_address">Adresse IP:</label>
+                <input type="text" id="ip_address" name="ip_address" required placeholder="ex: 192.168.1.10">
             </div>
 
             <!-- Machine Status Dropdown -->
@@ -54,6 +54,20 @@
             <!-- Submit Button -->
             <button type="submit" class="btn-submit">Soumettre</button>
         </form>
+
+        <!-- Displaying the results if they exist -->
+        {% if data %}
+        <div class="result-box">
+            <h3>Last Received Metrics</h3>
+            <ul>
+                <li><strong>Name:</strong> {{ data.hostname }}</li>
+                <li><strong>IP:</strong> {{ data.ip_address }}</li>
+                <li><strong>Status:</strong> {{ data.status }}</li>
+                <li><strong>Temp:</strong> {{ data.temperature }}°C</li>
+                <li><strong>Errors:</strong> {{ data.network_errors }}</li>
+            </ul>
+        </div>
+        {% endif %}
             
     </main>
 
