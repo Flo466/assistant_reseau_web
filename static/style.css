@@ -55,3 +55,78 @@ footer {
     font-size: 0.9rem;
     border-top: 1px solid #334155;
 }
+
+/* Form container layout */
+.machine-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+/* Individual form groups alignment */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* Inputs, select dropdown fields styling */
+.form-group input, .form-group select {
+    padding: 0.6rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f8fafc;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #3b82f6; /* Modern blue highlight */
+    background-color: #ffffff;
+}
+
+/* Submit button styling */
+.btn-submit {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+/* Simple result container styling */
+.result-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f0fdf4; /* Light green success background */
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+}
+
+.result-box h3 {
+    color: #166534;
+    margin-bottom: 0.5rem;
+}
+
+.result-box ul {
+    list-style: none;
+}
+
+.result-box li {
+    margin: 0.25rem 0;
+}
