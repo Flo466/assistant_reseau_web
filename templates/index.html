@@ -14,6 +14,23 @@
 
     <main>
         <h2>Informations machine</h2>
+        <!-- Displaying the results if they exist -->
+        {% if hostname %}
+        <div class="result-box">
+            <h3>Métriques pour {{ hostname }}</h3>
+            
+            {% if alert_message %}
+                <p style="color: red; font-weight: bold;">{{ alert_message }}</p>
+            {% endif %}
+            
+            <ul>
+                <li><strong>Addresse IP:</strong> {{ ip_address }}</li>
+                <li><strong>Statut:</strong> {{ status }}</li>
+                <li><strong>Température:</strong> {{ temperature }}°C</li>
+                <li><strong>Erreurs réseau:</strong> {{ network_errors }}</li>
+            </ul>
+        </div>
+        {% endif %}
         <!-- Form pointing to the Python logic route -->
         <form action="/submit-machine" method="POST" class="machine-form">
             <!-- Hostname Input -->
@@ -54,20 +71,6 @@
             <!-- Submit Button -->
             <button type="submit" class="btn-submit">Soumettre</button>
         </form>
-
-        <!-- Displaying the results if they exist -->
-        {% if data %}
-        <div class="result-box">
-            <h3>Last Received Metrics</h3>
-            <ul>
-                <li><strong>Name:</strong> {{ data.hostname }}</li>
-                <li><strong>IP:</strong> {{ data.ip_address }}</li>
-                <li><strong>Status:</strong> {{ data.status }}</li>
-                <li><strong>Temp:</strong> {{ data.temperature }}°C</li>
-                <li><strong>Errors:</strong> {{ data.network_errors }}</li>
-            </ul>
-        </div>
-        {% endif %}
             
     </main>
 
